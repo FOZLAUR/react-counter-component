@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
 import CounterGroup from './CounterGroup';
+import CounterSizeGenerator from './CounterSizeGenerator';
 
 class MultiCounter extends Component {
     constructor(props){
         super(props)
 
-        // this.onGenerate = this.onGenerate.bind(this);
+        this.onGenerate = this.onGenerate.bind(this);
 
         this.state = { size: 0, sum: 0}
     }
 
+    onGenerate(size){
+        this.setState({size});
+    }
+
     render() {
-        const size = 3;
         return (
             <div>
-                <CounterGroup size={size} />
+                <CounterSizeGenerator onGenerate={this.onGenerate}/>
+                <CounterGroup size={this.state.size} />
             </div>
         );
     }
