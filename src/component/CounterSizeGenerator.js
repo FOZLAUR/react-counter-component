@@ -19,13 +19,12 @@ class CounterSizeGenerator extends Component {
     render() {
         return (
             <div>
-                <label htmlFor="size"> Generate </label>
+                <label htmlFor="size"> Enter amount of counters: </label>
                 <input  type="number"
                         name="size"
                         id="size"
                         value= {this.state.size}
                         onChange={this.onChange} />
-                <label htmlFor="size"> Counters </label>
             </div>
         );
     }
