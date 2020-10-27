@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import Counter from './Counter';
+import CounterContainer from '../containers/CounterContainer';
 
 class CounterGroup extends Component {
     
-    initArray(size) {
-        const number = size.length > 0 && parseInt(size) > 0 ? parseInt(size) : 0;
-        return Array.from(Array(number).keys());
+    initArray(count) {
+        // const number = size.length > 0 && parseInt(size) > 0 ? parseInt(size) : 0;
+        return Array.from(Array(Number(count)).keys());
     }
 
     render() {
-        const size = this.props.size;
-        const counterSizeArray = this.initArray(size);
+        // const size = this.props.size;
+        const counterSizeArray = this.initArray(this.props.number);
         const counters = counterSizeArray.map((value) => (
-            <Counter key={value} addToSum={this.props.addToSum}/>   
+            <CounterContainer key={value.toString} />   
         ));
 
         return (

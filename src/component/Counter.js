@@ -8,15 +8,18 @@ class Counter extends Component {
     }
 
     componentWillUnmount = () => {
-        this.props.addToSum(this.state.number * -1);
+        // this.props.addToSum(this.state.number * -1);
+        this.props.resetSum(this.state.number);
     }
     
     onIncrease = () => {
-        this.setState((prevState) => ({number : prevState.number + 1}), () => this.props.addToSum(1));
+        this.setState((prevState) => ({number : prevState.number + 1}));
+        this.props.incrementSum();
     }
 
     onDecrease = () => {
-        this.setState((prevState) => ({number : prevState.number - 1}), () => this.props.addToSum(-1));
+        this.setState((prevState) => ({number : prevState.number - 1}));
+        this.props.decrementSum();
     }
 
     render() {
