@@ -23,6 +23,7 @@ class CounterSizeGenerator extends Component {
                 <input  type="number"
                         name="size"
                         id="size"
+                        min="0"
                         value= {this.state.size}
                         onChange={this.onChange} />
                 <label htmlFor="size"> Counters </label>
